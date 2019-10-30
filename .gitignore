@@ -1,0 +1,6 @@
+*.py[cod]
+*.swp
+*.log
+__pycache__
+venv
+env

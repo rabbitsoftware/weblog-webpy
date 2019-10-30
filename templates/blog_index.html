@@ -1,0 +1,26 @@
+$def with (posts)
+
+
+$var title: Example.org Blog
+$var width: 782px
+$var color: white
+
+$var head:
+	  <link rel="alternate" type="application/rss+xml" title="RSS" href="feed" />
+
+$var sidebar:
+<div id="sidebar">
+<a href="/feed"><img src="http://static.watchdog.net/images/rss.png" style="float: left; padding-right: 5px;" border="0" alt="RSS Feeds" /></a>
+This is where we post about
+site changes, relevant news, and other interesting bits of gossip.
+(Want to stay up-to-date? Subscribe to our <a href="/feed">feed</a>.)
+</div>
+
+	<h1>Example Blog</h1>
+
+$for post in posts:
+    <h2><a href="$post.slug">$post.title</a></h2>
+    
+    $:post.body
+    
+    <div class="attribution strapline">posted by $post.author on $post.updated</em> <a href="$post.slug">#</a></div>

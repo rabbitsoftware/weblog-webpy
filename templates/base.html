@@ -1,0 +1,16 @@
+$def with (page)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  $if page.get('front'):
+      <title>example.net: $:page.title.strip()</title>
+  $else:
+      <title>$:page.title.strip() (example.net)</title>
+  $:page.get('head')
+</head>
+<body>
+<div id="main">
+$:page
+</div>
+</body>
+</html>
